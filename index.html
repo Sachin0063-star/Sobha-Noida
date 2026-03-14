@@ -1473,6 +1473,26 @@ scroll-behavior:smooth;
         font-size: 1.8rem;
     }
 }
+
+
+
+
+/* contact button 
+.nav-menu li a.contact-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 2px solid var(--primary-dark);
+    border-radius: 25px;
+    background: transparent;
+    color: var(--primary-dark);
+    transition: all 0.3s ease;
+}
+
+.nav-menu li a.contact-btn:hover {
+    background: var(--primary-dark);
+    color: #fff;
+    text-decoration: none;
+} */
  </style>
 
                     
@@ -1483,27 +1503,28 @@ scroll-behavior:smooth;
 <body>
 
     <!-- Header -->
-    <header id="header">
-        <div class="container nav-wrapper">
-            <div class="logo">
-                <i class="fa-solid  gold-text"></i> SOBHA 
+        <header id="header">
+            <div class="container nav-wrapper">
+                <div class="logo">
+                    <i class="fa-solid gold-text"></i> SOBHA 
+                </div>
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#home" class="nav-link" onclick="toggleMenu()">Home</a></li>
+                        <li><a href="#about" class="nav-link" onclick="toggleMenu()">About</a></li>
+                        <li><a href="#sobha-rivana" class="nav-link" onclick="toggleMenu()">Sobha Rivana</a></li>
+                        <li><a href="#amenities" class="nav-link" onclick="toggleMenu()">Amenities</a></li>
+                        <li><a href="#faq" class="nav-link" onclick="toggleMenu()">FAQ</a></li>
+                        <li>
+                            <a href="#contact" class="nav-link contact-btn" onclick="toggleMenu()">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link" onclick="toggleMenu()">Home</a></li>
-                    <li><a href="#about" class="nav-link" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#sobha-rivana" class="nav-link" onclick="toggleMenu()">Sobha Rivana</a></li>
-                    <li><a href="#amenities" class="nav-link" onclick="toggleMenu()">Amenities</a></li>
-                     <li><a href="#contact" class="nav-link" onclick="toggleMenu()">Contact</a></li>
-                    <li><a href="#faq" class="nav-link" onclick="toggleMenu()">FAQ</a></li>    
-                   
-                </ul>
-            </nav>
-            <div class="mobile-toggle" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </header>
+        </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">

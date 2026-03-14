@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sobha Rivana | Luxury Living in Greater Noida West</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Playfair Display for Headings (Luxury/Professional) -->
+    <!-- Lato for Body (Clean, reads well when justified) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -25,42 +27,70 @@
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html{
+scroll-behavior:smooth;
+}
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; font-size: 18px; /* Increased base font size */ }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Lato', sans-serif; /* Professional Body Font */
             color: var(--text-main);
             background-color: var(--white);
-            line-height: 1.7;
+            line-height: 1.8; /* Increased line-height for justified text readability */
             overflow-x: hidden;
+            text-align: justify; /* GLOBAL JUSTIFY ALIGNMENT */
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+        /* --- TYPOGRAPHY UPGRADE --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif; /* Professional Heading Font */
             color: var(--primary-dark);
             line-height: 1.2;
+            margin-bottom: 1rem;
+            text-align: left; /* Headings usually look better left-aligned */
         }
 
-        img { max-width: 100%; display: block; }
-        a { text-decoration: none; color: inherit; }
+        /* Centered overrides for section headers only */
+        .section-header h2 { text-align: center; }
+        .testimonials h2 { text-align: center; color: white; }
+
+        /* BIG HEADINGS & TEXT */
+        h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; } /* Bigger Hero */
+        h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; } /* Bigger Section Titles */
+        h3 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; }
+        h4 { font-size: 1.3rem; font-weight: 700; }
+        
+        /* Bigger Paragraphs */
+        p { 
+            font-size: 1.15rem; /* Increased body text size */
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
 
         /* --- UTILITIES --- */
         .container {
+            width: 100%;
             max-width: 1250px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
         .btn {
-            display: inline-block;
-            padding: 14px 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
             background: var(--gold);
             color: var(--white);
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             border-radius: 2px;
             transition: var(--transition);
             border: 2px solid var(--gold);
@@ -68,6 +98,7 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            font-size: 1rem; /* Bigger Button Text */
         }
 
         .btn::before {
@@ -83,24 +114,28 @@
         .btn:hover { border-color: var(--primary-dark); }
 
         .btn-outline {
-            background: transparent;
+            background: white;
             color: var(--white);
             border-color: var(--white);
-        }
-        .btn-outline:hover { color: var(--primary-dark); }
+        } */
+         .btn-outline:hover { color: var(--primary-dark); border-color: var(--primary-dark); }
 
-        .section-padding { padding: 100px 0; }
+        .section-padding { padding: clamp(80px, 10vw, 120px) 0; }
         
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
-            opacity: 0; /* For animation */
+            margin-bottom: 70px;
+            opacity: 0;
             transform: translateY(30px);
         }
 
+        .section-header p {
+            text-align: center; /* Subtitles centered */
+            font-size: 1.25rem;
+        }
+
         .section-header h2 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
@@ -108,14 +143,14 @@
         .section-header h2::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
+            width: 80px; /* Wider underline for bigger titles */
+            height: 4px;  /* Thicker underline */
             background: var(--gold);
-            margin: 15px auto 0;
+            margin: 20px auto 0;
             transition: width 0.5s ease;
         }
 
-        .section-header:hover h2::after { width: 100px; }
+        .section-header:hover h2::after { width: 140px; }
 
         .gold-text { color: var(--gold); }
 
@@ -137,13 +172,13 @@
             width: 100%;
             z-index: 1000;
             transition: var(--transition);
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
         header.scrolled {
             background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            padding: 10px 0;
+            padding: 15px 0;
         }
 
         .nav-wrapper {
@@ -153,26 +188,31 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
             font-weight: 700;
+            font-family: 'Playfair Display', serif; /* Logo uses heading font */
             color: var(--white);
             display: flex;
             align-items: center;
             gap: 10px;
+            z-index: 1002;
         }
         
         header.scrolled .logo { color: var(--primary-dark); }
 
         .nav-menu {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         .nav-link {
             color: var(--white);
-            font-weight: 500;
+            font-weight: 600;
             position: relative;
             padding-bottom: 5px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         header.scrolled .nav-link { color: var(--primary-dark); }
@@ -191,7 +231,7 @@
         .header-cta {
             background: var(--gold);
             color: var(--white) !important;
-            padding: 8px 20px;
+            padding: 10px 25px;
             border-radius: 4px;
         }
         
@@ -200,18 +240,20 @@
         .mobile-toggle {
             display: none;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
+            z-index: 1002;
         }
         header.scrolled .mobile-toggle { color: var(--primary-dark); }
 
         /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
+            min-height: 650px;
             background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.7)), url('https://picsum.photos/seed/luxuryestate/1920/1080');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect */
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -219,36 +261,36 @@
             color: var(--white);
             padding-top: 80px;
             position: relative;
-            overflow: hidden;
         }
 
         .hero-content {
             z-index: 2;
-            max-width: 900px;
+            max-width: 1000px;
+            padding: 0 20px;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 3px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: inline-block;
             border-bottom: 1px solid rgba(197, 160, 89, 0.5);
             padding-bottom: 10px;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
+            margin-bottom: 25px;
             color: var(--white);
             animation: slideDown 1s ease-out;
         }
 
         .hero-price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 300;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             opacity: 0;
             animation: fadeIn 1.5s ease-out 0.5s forwards;
         }
@@ -256,7 +298,7 @@
         .hero-price span {
             color: var(--gold);
             font-weight: 700;
-            font-size: 2rem;
+            font-size: 1.3em;
         }
 
         .hero-btns {
@@ -265,9 +307,9 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Scroll Down Indicator */
         .scroll-down {
             position: absolute;
             bottom: 30px;
@@ -275,7 +317,7 @@
             transform: translateX(-50%);
             animation: bounce 2s infinite;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             opacity: 0.7;
         }
 
@@ -284,18 +326,25 @@
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
         }
 
         .highlight-card {
             background: var(--white);
-            padding: 40px 20px;
-            text-align: center;
+            padding: 40px 30px;
+            text-align: center; /* Cards content centered */
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: var(--transition);
             border-top: 3px solid transparent;
+        }
+        
+        /* Ensure text inside cards is left aligned or justified depending on preference, 
+           but centered containers look cleaner for icons. 
+           Let's make the text inside cards left-aligned for readability. */
+        .highlight-card p, .highlight-card h4 {
+            text-align: center; 
         }
 
         .highlight-card:hover {
@@ -305,16 +354,16 @@
         }
 
         .icon-box {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             transition: transform 0.3s;
         }
 
         .highlight-card:hover .icon-box { transform: scale(1.1) rotate(5deg); }
 
-        .highlight-card h4 { font-size: 1.1rem; margin-bottom: 10px; }
-        .highlight-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; }
+        .highlight-card h4 { font-size: 1.4rem; margin-bottom: 15px; }
+        .highlight-card p { font-size: 1.1rem; color: var(--text-light); margin: 0; }
 
         /* --- ABOUT DEVELOPER --- */
         .about-section { background: var(--white); overflow: hidden; }
@@ -326,94 +375,118 @@
             align-items: center;
         }
 
-        .about-img-wrapper {
-            position: relative;
-        }
+        .about-img-wrapper { position: relative; }
+        .about-text { }
 
         .about-img {
             width: 100%;
             border-radius: 4px;
-            box-shadow: 20px 20px 0 var(--bg-off-white);
+            box-shadow: 25px 25px 0 var(--bg-off-white);
         }
 
         .founder-tag {
             position: absolute;
             bottom: -20px;
-            right: -20px;
+            right: -10px;
             background: var(--primary-dark);
             color: var(--white);
-            padding: 20px;
+            padding: 25px;
             border-left: 4px solid var(--gold);
+            max-width: 280px;
+            width: 100%;
         }
 
-        /* --- PROJECT DETAILS (Tabs/Accordion Feel) --- */
-        .project-details { background: var(--primary-dark); color: var(--white); }
-        .project-details h2, .project-details h3 { color: var(--white); }
-        .project-details p { color: #cbd5e1; }
+        .founder-tag h5 { color: var(--white); font-size: 1.4rem; }
+        .founder-tag small { font-size: 1rem; font-family: 'Lato', sans-serif; opacity: 0.8; }
 
-        .detail-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            align-items: center;
+
+
+
+        /* --- PROJECT DETAILS --- */
+       /* --- PROJECT DETAILS --- */
+
+        .project-details { 
+        background: var(--primary-dark); 
+        color: var(--white); 
         }
 
-        .detail-text { flex: 1; min-width: 300px; }
-        .detail-image { flex: 1; min-width: 300px; }
-        .detail-image img { border: 2px solid var(--gold); }
-
-        .spec-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
+        .project-details h2, 
+        .project-details h3 { 
+        color: var(--white); 
         }
 
-        .spec-item {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
-        }
-        .spec-item strong { color: var(--gold); display: block; margin-bottom: 5px; }
-
-        /* --- FLOOR PLANS --- */
-        .plans-section { background: var(--bg-off-white); }
-
-        .plan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .project-details p { 
+        color: #cbd5e1; 
+        text-align: justify; 
         }
 
-        .plan-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: var(--transition);
+        .detail-flex{
+        display:flex;
+        align-items:stretch;
+        gap:50px;
+        flex-wrap:wrap;
         }
 
-        .plan-card:hover { transform: translateY(-10px); }
-
-        .plan-header {
-            background: var(--primary-dark);
-            padding: 30px;
-            text-align: center;
-            position: relative;
+        .detail-text{
+        flex:1;
+        min-width:320px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
         }
 
-        .plan-type { font-size: 2rem; color: var(--white); margin-bottom: 5px; }
-        .plan-label { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
-
-        .plan-body { padding: 40px; text-align: center; }
-        
-        .size-display {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 5px;
+        .detail-image{
+        flex:1;
+        min-width:320px;
+        display:flex;
         }
-        
-        .unit { color: var(--gold); font-weight: 600; }
+
+        .detail-image img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        border:2px solid var(--gold);
+        border-radius:6px;
+        }
+
+        /* SPEC LIST */
+
+        .spec-list{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+        gap:25px;
+        margin-top:35px;
+        }
+
+        .spec-item{
+        border-bottom:1px solid rgba(255,255,255,0.1);
+        padding-bottom:15px;
+        }
+
+        .spec-item strong{
+        color:var(--gold);
+        display:block;
+        margin-bottom:8px;
+        font-size:1.2rem;
+        }
+
+        .spec-item span{
+        font-size:1.05rem;
+        }
+
+        /* MOBILE */
+
+        @media (max-width:768px){
+
+        .detail-flex{
+        flex-direction:column;
+        }
+
+        .detail-image img{
+        height:auto;
+        }
+
+        }
 
         /* --- AMENITIES --- */
         .amenities-section { background: var(--white); }
@@ -421,12 +494,12 @@
         .amenities-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .amenity-box {
             text-align: center;
-            padding: 30px 15px;
+            padding: 35px 20px;
             border: 1px solid #eee;
             border-radius: 8px;
             transition: var(--transition);
@@ -437,19 +510,11 @@
             border-color: var(--primary-dark);
         }
 
-        .amenity-box h4, .amenity-box i {
-            transition: var(--transition);
-        }
+        .amenity-box h4, .amenity-box i { transition: var(--transition); }
+        .amenity-box:hover h4, .amenity-box:hover i { color: var(--white); }
 
-        .amenity-box:hover h4, .amenity-box:hover i {
-            color: var(--white);
-        }
-
-        .amenity-box i {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
+        .amenity-box i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .amenity-box h4 { font-size: 1.1rem; }
 
         /* --- LOCATION --- */
         .location-section { background: var(--bg-off-white); }
@@ -463,9 +528,9 @@
             overflow: hidden;
         }
 
-        .loc-info { padding: 50px; }
-        .loc-map { height: 100%; min-height: 400px; position: relative; }
-        .loc-map img { width: 100%; height: 100%; object-fit: cover; }
+        .loc-info { padding: 50px; order: 2; }
+        .loc-map { order: 1; height: 100%; min-height: 400px; position: relative; }
+        .loc-map iframe, .loc-map img { width: 100%; height: 100%; object-fit: cover; border: none; }
         
         .dist-row {
             display: flex;
@@ -473,8 +538,9 @@
             margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 1px solid #f1f5f9;
+            font-size: 1.1rem;
         }
-        .dist-row span:last-child { font-weight: 600; color: var(--primary-dark); }
+        .dist-row span:last-child { font-weight: 700; color: var(--primary-dark); }
 
         /* --- TESTIMONIALS --- */
         .testimonials {
@@ -483,27 +549,27 @@
             text-align: center;
         }
         
-        .testi-card {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            padding: 50px;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.1);
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
         }
 
-        .testi-card p { color: #cbd5e1; font-size: 1.2rem; font-style: italic; }
-        .testi-img {
-            width: 80px; height: 80px; border-radius: 50%;
-            border: 3px solid var(--gold);
-            margin: 20px auto;
-            object-fit: cover;
+        .testimonial-video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
         }
+
+        .testimonial-content { padding: 0 20px; }
+
+        .quote-icon { font-size: 3.5rem; color: var(--gold); margin-bottom: 25px; display: block; }
+        .testimonial-text { font-size: 1.3rem; color: #cbd5e1; font-style: italic; margin-bottom: 25px; text-align: center; }
 
         /* --- FAQ --- */
         .faq-item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid #e2e8f0;
             border-radius: 4px;
             overflow: hidden;
@@ -512,18 +578,19 @@
         .faq-question {
             width: 100%;
             background: var(--white);
-            padding: 20px;
+            padding: 25px;
             text-align: left;
             border: none;
             outline: none;
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.2rem; /* Bigger FAQ Text */
+            font-weight: 700;
             color: var(--primary-dark);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: background 0.3s;
+            font-family: 'Playfair Display', serif;
         }
 
         .faq-question:hover { background: #f8fafc; }
@@ -533,12 +600,12 @@
             overflow: hidden;
             background: var(--white);
             transition: max-height 0.3s ease;
-            padding: 0 20px;
+            padding: 0 25px;
         }
         
-        .faq-answer p { padding: 20px 0; color: var(--text-light); }
+        .faq-answer p { padding: 25px 0; color: var(--text-light); font-size: 1.1rem; }
 
-        .faq-item.active .faq-answer { max-height: 200px; }
+        .faq-item.active .faq-answer { max-height: 500px; }
         .faq-item.active .faq-question { background: var(--bg-off-white); color: var(--gold); }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
 
@@ -546,36 +613,36 @@
         footer {
             background: #0b1120;
             color: #94a3b8;
-            padding: 80px 0 20px;
+            padding: 80px 0 30px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
             margin-bottom: 50px;
         }
 
-        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.2rem; }
+        .footer-col h4 { color: var(--white); margin-bottom: 25px; font-size: 1.3rem; }
         .footer-links li { margin-bottom: 12px; }
         .footer-links a:hover { color: var(--gold); padding-left: 5px; transition: 0.3s; }
         
         .disclaimer {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             border-top: 1px solid #1e293b;
-            padding-top: 20px;
+            padding-top: 25px;
             text-align: justify;
         }
 
         /* --- FLOATING BUTTONS --- */
         .sticky-actions {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             display: flex;
             flex-direction: column;
             gap: 15px;
-            z-index: 999;
+            z-index: 990;
         }
 
         .action-btn {
@@ -599,7 +666,7 @@
             right: 70px;
             background: var(--primary-dark);
             color: var(--white);
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-radius: 4px;
             font-size: 0.8rem;
             opacity: 0;
@@ -626,6 +693,7 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s;
+            padding: 20px;
         }
 
         .modal.open { display: flex; opacity: 1; }
@@ -652,13 +720,14 @@
         }
 
         .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; }
+        .form-group label { display: block; margin-bottom: 10px; font-weight: 700; font-size: 1rem; }
         .form-control {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border: 1px solid #e2e8f0;
             border-radius: 4px;
-            font-family: inherit;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
         }
         .form-control:focus { outline: none; border-color: var(--gold); }
 
@@ -667,20 +736,429 @@
         @keyframes slideDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);} 40% {transform: translateX(-50%) translateY(-10px);} 60% {transform: translateX(-50%) translateY(-5px);} }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 3rem; }
-            .about-grid, .detail-flex, .loc-container, .footer-grid { grid-template-columns: 1fr; }
-            .nav-menu { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-            .nav-menu.active { display: flex; }
-            .nav-link { color: var(--primary-dark); }
-            .mobile-toggle { display: block; }
-            .sticky-actions { bottom: 10px; right: 10px; flex-direction: row; }
-            .action-btn { width: 45px; height: 45px; font-size: 1.2rem; }
-            .action-btn::after { display: none; }
-            .footer-grid { gap: 30px; }
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .loc-container { grid-template-columns: 1fr; }
+            .loc-map { height: 400px; order: 1; }
+            .loc-info { order: 2; }
+            .card-grid { grid-template-columns: repeat(2, 1fr); }
+            .amenities-wrapper { grid-template-columns: repeat(3, 1fr); }
         }
-    </style>
+
+        @media (max-width: 768px) {
+            html { font-size: 16px; } /* Slightly smaller base on mobile */
+            body { line-height: 1.6; }
+            
+            .hero { background-attachment: scroll; }
+            
+            .mobile-toggle { display: block; }
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 0; right: -100%;
+                width: 85%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+                transition: right 0.4s ease-in-out;
+                padding: 20px;
+                z-index: 1001;
+            }
+            .nav-menu.active { right: 0; display: flex; }
+            .nav-link { color: var(--primary-dark); font-size: 1.4rem; }
+            .header-cta { display: none; }
+            
+            .about-grid { grid-template-columns: 1fr; }
+            .about-img-wrapper { order: 1; margin-bottom: 20px; }
+            .about-text { order: 2; }
+            .about-img { box-shadow: 10px 10px 0 var(--bg-off-white); }
+            
+            .loc-container { grid-template-columns: 1fr; }
+            .loc-map { order: 1; min-height: 300px; }
+            .loc-info { order: 2; padding: 30px 20px; }
+
+            .detail-flex { flex-direction: column; }
+            .detail-image { width: 100%; order: 1; }
+            .detail-text { order: 2; width: 100%; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            
+            .sticky-actions { 
+                bottom: 15px; 
+                right: 50%; 
+                transform: translateX(50%); 
+                flex-direction: row; 
+                width: max-content;
+            }
+            .action-btn { width: 50px; height: 50px; }
+            .action-btn::after { display: none; }
+            
+            .section-padding { padding: 60px 0; }
+            .hero-btns { flex-direction: column; width: 100%; }
+            .hero-btns .btn { width: 100%; }
+            
+            /* Specific text alignment for very small screens */
+            .dist-row { font-size: 1rem; }
+            .spec-item strong { font-size: 1.1rem; }
+        }
+
+
+
+
+
+
+         /* --- VISIBLE CONTACT SECTION (NEW) --- */
+        .contact-section { 
+    background: var(--white); 
+                }
+
+                .contact-wrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1.2fr;
+                    gap: 60px;
+                    background: var(--white);
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                .contact-info-box {
+                    background: var(--primary-dark);
+                    color: var(--white);
+                    padding: 60px 40px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .contact-info-box h3 { 
+                    color: var(--white); 
+                    margin-bottom: 20px; 
+                }
+
+                .contact-info-box p { 
+                    color: #cbd5e1; 
+                    margin-bottom: 30px; 
+                    text-align: left; 
+                }
+
+                .info-item {
+                    display: flex;
+                    align-items: flex-start;
+                    margin-bottom: 25px;
+                }
+
+                .info-icon {
+                    width: 50px;
+                    height: 50px;
+                    background: rgba(197, 160, 89, 0.1);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--gold);
+                    font-size: 1.2rem;
+                    margin-right: 20px;
+                    flex-shrink: 0;
+                }
+
+                .info-text h5 { 
+                    color: var(--white); 
+                    font-size: 1.1rem; 
+                    margin-bottom: 5px; 
+                }
+
+                .info-text span { 
+                    color: #cbd5e1; 
+                    font-size: 0.95rem; 
+                    line-height: 1.5; 
+                }
+
+                .contact-form-box {
+                    padding: 60px 40px;
+                    background: #fff;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+                    border-radius: 0 10px 10px 0;
+                }
+
+                .form-grid { 
+                    display: grid; 
+                    grid-template-columns: 1fr 1fr; 
+                    gap: 20px; 
+                }
+
+                .form-group { 
+                    margin-bottom: 20px; 
+                    text-align: left; 
+                }
+
+                .form-group.full-width { 
+                    grid-column: span 2; 
+                }
+
+                .form-group label {
+                    display: block; 
+                    margin-bottom: 10px; 
+                    font-weight: 700; 
+                    font-size: 1rem; 
+                    color: var(--primary-dark);
+                }
+
+                .form-control {
+                    width: 100%; 
+                    padding: 15px;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 4px;
+                    font-family: 'Lato', sans-serif;
+                    font-size: 1.1rem;
+                    background: #f8fafc;
+                    transition: var(--transition);
+                }
+
+                .form-control:focus {
+                    outline: none; 
+                    border-color: var(--gold);
+                    background: #fff;
+                    box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
+                }
+
+                textarea.form-control { 
+                    resize: vertical; 
+                    min-height: 150px; 
+                }
+
+                /* Tablet */
+                @media (max-width: 992px){
+
+                .contact-wrapper{
+                    grid-template-columns: 1fr;
+                    gap:0;
+                }
+
+                .contact-info-box{
+                    padding:40px 30px;
+                    border-radius:10px 10px 0 0;
+                }
+
+                .contact-form-box{
+                    padding:40px 30px;
+                    border-radius:0 0 10px 10px;
+                }
+
+                .form-grid{
+                    grid-template-columns:1fr 1fr;
+                }
+
+                }
+
+                /* Mobile */
+                @media (max-width: 768px){
+
+                .section-padding{
+                    padding:60px 20px;
+                }
+
+                .contact-wrapper{
+                    grid-template-columns:1fr;
+                }
+
+                .contact-info-box{
+                    padding:35px 25px;
+                }
+
+                .contact-form-box{
+                    padding:35px 25px;
+                }
+
+                .form-grid{
+                    grid-template-columns:1fr;
+                }
+
+                .form-group.full-width{
+                    grid-column:span 1;
+                }
+
+                .info-icon{
+                    width:45px;
+                    height:45px;
+                    font-size:1rem;
+                    margin-right:15px;
+                }
+
+                .form-control{
+                    padding:13px;
+                    font-size:1rem;
+                }
+
+                }
+
+                /* Small Mobile */
+                @media (max-width: 480px){
+
+                .contact-info-box{
+                    padding:30px 20px;
+                }
+
+                .contact-form-box{
+                    padding:30px 20px;
+                }
+
+                .info-text h5{
+                    font-size:1rem;
+                }
+
+                .info-text span{
+                    font-size:0.9rem;
+                }
+
+                }
+
+
+                /* --- FLOOR PLANS CSS --- */
+
+/* Section Background */
+.plans-section {
+    background-color: var(--bg-off-white); /* Light grey background */
+    position: relative;
+}
+
+/* Grid Layout for 3 Cards */
+.plan-grid {
+    display: grid;
+    /* Automatically fit columns, minimum 300px wide, max 3 per row */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px; /* Space between cards */
+    align-items: stretch; /* Makes cards equal height */
+}
+
+/* The Card Container */
+.plan-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden; /* Ensures header radius doesn't bleed */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column; /* Stacks header and body */
+    height: 100%;
+}
+
+/* Hover Effect */
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* The Top Header (Dark Blue by default) */
+.plan-header {
+    background: var(--primary-dark); /* Dark Navy */
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    transition: background 0.3s;
+}
+
+/* The "2 BHK" Text */
+.plan-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+/* The "Luxury" Label */
+.plan-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* The Body Content Area */
+.plan-body {
+    padding: 40px 30px;
+    text-align: center;
+    flex-grow: 1; /* Pushes button to bottom if text lengths vary */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* The Big Number (1350) */
+.size-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+/* The "Sq. Ft." text */
+.unit {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Paragraph Text */
+.plan-body p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 20px 0 30px 0; /* Space between text and button */
+    text-align: center; /* Center text inside cards */
+}
+
+/* Buttons inside cards */
+.plan-body .btn {
+    width: 100%; /* Full width button */
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* Outline Button Style (for 2BHK and 4BHK) */
+.btn-outline {
+    color: var(--text-main) !important;
+    border: 2px solid var(--text-main) !important;
+}
+
+.btn-outline:hover {
+    background: var(--primary-dark) !important;
+    color: var(--white) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+/* --- Responsive CSS for Mobile --- */
+@media (max-width: 768px) {
+    .plan-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+        gap: 25px;
+    }
+    
+    .plan-header { padding: 30px 15px; }
+    .plan-type { font-size: 2rem; }
+    .plan-body { padding: 30px 20px; }
+    .size-display { font-size: 2.5rem; }
+}
+                    </style>
+
+                    
+
+
+
 </head>
 <body>
 
@@ -688,16 +1166,17 @@
     <header id="header">
         <div class="container nav-wrapper">
             <div class="logo">
-                <i class="fa-solid fa-crown gold-text"></i> SOBHA RIVANA
+                <i class="fa-solid  gold-text"></i> SOBHA 
             </div>
             <nav>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#highlights" class="nav-link"> Sobha Rivana</a></li>
-                    <li><a href="#amenities" class="nav-link">Amenities</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#contact" class="nav-link header-cta">Inquiry Now</a></li>
+                    <li><a href="#home" class="nav-link" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" class="nav-link" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#sobha-rivana" class="nav-link" onclick="toggleMenu()">Sobha Rivana</a></li>
+                    <li><a href="#amenities" class="nav-link" onclick="toggleMenu()">Amenities</a></li>
+                     <li><a href="#contact" class="nav-link" onclick="toggleMenu()">Contact</a></li>
+                    <li><a href="#faq" class="nav-link" onclick="toggleMenu()">FAQ</a></li>    
+                   
                 </ul>
             </nav>
             <div class="mobile-toggle" onclick="toggleMenu()">
@@ -709,7 +1188,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">New Launch In Sector 1</div>
+            <div class="hero-subtitle">New Launch In Noida sector Sector 1</div>
             <h1>Spacious 2, 3 & 4 BHK Luxury Apartments</h1>
             <div class="hero-price">Starting at <span>₹ 2.09 Cr*</span></div>
             <div class="hero-btns">
@@ -722,44 +1201,29 @@
         </a>
     </section>
 
-
     <!-- About Developer -->
- <section id="about" class="section-padding about-section">
-    <div class="container">
-        <div class="about-grid">
-
-            <div class="about-img-wrapper reveal">
-                <img src="https://sobha-noidaproject.com/wp-content/uploads/2026/03/1741346573-PNCMenonFounderSobhaGroup-750x580.webp" alt="Mr. PNC Menon" class="about-img">
-
-                <div class="founder-tag">
-                    <h5 class="founder-name">Mr. PNC Menon</h5>
-                    <small>Founder, SOBHA Group</small>
+    <section id="about" class="section-padding about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrapper reveal">
+                    <img src="https://sobha-noidaproject.com/wp-content/uploads/2026/03/1741346573-PNCMenonFounderSobhaGroup-750x580.webp" alt="Mr. PNC Menon" class="about-img">
+                    <div class="founder-tag">
+                        <h5>Mr. PNC Menon</h5>
+                        <small>Founder, SOBHA Group</small>
+                    </div>
+                </div>
+                <div class="about-text reveal">
+                    <h2>About Sobha Realty</h2>
+                    <p style="font-style: italic; color: var(--gold); font-size: 1.3rem; margin: 25px 0;">
+                        “Commitment to high quality in every single undertaking, integrity of mind, and sincere customer orientation are important keys to achieving success.”
+                    </p>
+                    <p>
+                        SOBHA Realty is globally recognized for its exceptional construction quality, attention to detail, and commitment to excellence. Founded by Mr. PNC Menon, the brand has built a legacy of delivering world-class residential communities that combine superior design, premium materials, and sustainable development. With decades of experience in the real estate industry, SOBHA continues to set new benchmarks in luxury living, ensuring that every project reflects the highest standards of craftsmanship and customer satisfaction.
+                    </p>
                 </div>
             </div>
-
-            <div class="about-text reveal">
-
-                <h2 class="about-title">About Sobha Realty</h2>
-
-        
-
-                <p class="founder-quote">
-                    “Commitment to high quality in every single undertaking, integrity of mind,
-                    and sincere customer orientation are important keys to achieving success.”
-                </p>
-
-                <p class="about-desc">
-                    SOBHA Realty is globally recognized for its exceptional construction quality,
-                    attention to detail, and commitment to excellence. Founded by Mr. PNC Menon,
-                    the brand has built a legacy of delivering world-class residential communities
-                    that combine superior design, premium materials, and sustainable development.
-                </p>
-
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Highlights Section -->
     <section id="highlights" class="section-padding highlights">
@@ -787,46 +1251,38 @@
                 <div class="highlight-card reveal">
                     <div class="icon-box"><i class="fa-solid fa-tag"></i></div>
                     <h4>Price</h4>
-                    <p>₹15,500–₹16,500/sq. ft. (All Inclusive)</p>
+                    <p>₹15,000–₹16,000/sq. ft.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Project Details -->
-    <section id="project-details" class="section-padding project-details">
+<section id="sobha-rivana" class="section-padding project-details">
         <div class="container">
             <div class="section-header reveal">
-                <h2 style="color: var(--white);">Project highlight</h2>
+                <h2 style="color: var(--white);">Sobha Rivana</h2>
                 <p>Where Luxury Meets Comfort</p>
             </div>
             <div class="detail-flex">
                 <div class="detail-image reveal">
-                    <img src="https://sobha-noidaproject.com/wp-content/uploads/2025/07/sobha-rivana-banner-850x550.jpg" alt="Sobha Rivana Tower">
+                    <img src="https://sobha-noidaproject.com/wp-content/uploads/2025/07/sobha-rivana-banner-850x550.jpg" 
+                            style="width:100%; height:auto;" 
+                            alt="Sobha Rivana Tower">
                 </div>
                 <div class="detail-text reveal">
-                    <h3 style="margin-bottom: 20px;">Sector 1, Greater Noida West</h3>
-                    <p>Sobha Rivana is a premier, upcoming luxury residential project featuring 8 high-rise towers (G+45) on a 12-acre development. Designed for modern, high-end living with low-density planning.</p>
+                    <h3>Sector 1, Greater Noida West</h3>
+                    <p>
+                        Sobha Rivana is a premier, upcoming luxury residential project featuring 8 high-rise towers (G+45) on a 12-acre development. Designed for modern, high-end living with low-density planning, this project offers a perfect blend of comfort, style, and exclusivity. The architecture is thoughtfully designed to maximize natural light and ventilation, providing residents with a serene and spacious living environment. Every detail, from the grand entrance lobby to the landscaped gardens, reflects the meticulous craftsmanship that SOBHA is renowned for.
+                    </p>
                     
                     <div class="spec-list">
-                        <div class="spec-item">
-                            <strong>Status</strong>
-                            Coming Soon...
-                        </div>
-                        <div class="spec-item">
-                            <strong>Type</strong>
-                            Luxury Apartments
-                        </div>
-                        <div class="spec-item">
-                            <strong>Size</strong>
-                            12 Acres
-                        </div>
-                        <div class="spec-item">
-                            <strong>Config</strong>
-                            2, 3, & 4 BHK
-                        </div>
+                        <div class="spec-item"><strong>Status</strong><span>Coming Soon...</span></div>
+                        <div class="spec-item"><strong>Type</strong><span>Luxury Apartments</span></div>
+                        <div class="spec-item"><strong>Size</strong><span>12 Acres</span></div>
+                        <div class="spec-item"><strong>Config</strong><span>2, 3, & 4 BHK</span></div>
                     </div>
-                    <div style="margin-top: 30px;">
+                    <div style="margin-top: 35px;">
                         <button class="btn" onclick="openModal()">Download Brochure</button>
                     </div>
                 </div>
@@ -838,7 +1294,7 @@
     <section class="section-padding plans-section">
         <div class="container">
             <div class="section-header reveal">
-                <h2>Exquisite Floor Plans</h2>
+                <h2> Floor Plans</h2>
                 <p>Designed for spacious living</p>
             </div>
             <div class="plan-grid">
@@ -850,32 +1306,34 @@
                     <div class="plan-body">
                         <div class="size-display">1350</div>
                         <span class="unit">Sq. Ft.</span>
-                        <p style="margin-top: 15px;">Compact yet luxurious living spaces.</p>
-                        <button class="btn btn-outline" style="color:var(--text-main); border-color:var(--text-main); margin-top: 20px;" onclick="openModal()">View Layout</button>
+                        <p>Smartly planned homes designed for modern living, offering comfort, style, and efficient use of space.</p>
+                        <button class="btn btn-outline" style="color:var(--text-main); border-color:var(--text-main); margin-top: 25px;" onclick="openModal()">View Layout</button>
                     </div>
-                </div>
-                <div class="plan-card reveal">
-                    <div class="plan-header" style="background: var(--gold);">
-                        <div class="plan-type">3 BHK</div>
-                        <div class="plan-label">Premium</div>
                     </div>
-                    <div class="plan-body">
-                        <div class="size-display">1900</div>
-                        <span class="unit">Sq. Ft.</span>
-                        <p style="margin-top: 15px;">Perfect balance of space & comfort.</p>
-                        <button class="btn" style="margin-top: 20px;" onclick="openModal()">View Layout</button>
+
+                    <div class="plan-card reveal">
+                        <div class="plan-header" style="background: var(--gold);">
+                            <div class="plan-type">3 BHK</div>
+                            <div class="plan-label">Premium</div>
+                        </div>
+                        <div class="plan-body">
+                            <div class="size-display">1700-1900</div>
+                            <span class="unit">Sq. Ft.</span>
+                            <p>Spacious residences crafted for families seeking the perfect balance of luxury, comfort, and functionality.</p>
+                            <button class="btn" style="margin-top: 25px;" onclick="openModal()">View Layout</button>
+                        </div>
                     </div>
-                </div>
-                <div class="plan-card reveal">
-                    <div class="plan-header">
-                        <div class="plan-type">4 BHK</div>
-                        <div class="plan-label">Ultra-Luxury</div>
-                    </div>
-                    <div class="plan-body">
-                        <div class="size-display">2600</div>
-                        <span class="unit">Sq. Ft.</span>
-                        <p style="margin-top: 15px;">Expansive homes for grand living.</p>
-                        <button class="btn btn-outline" style="color:var(--text-main); border-color:var(--text-main); margin-top: 20px;" onclick="openModal()">View Layout</button>
+
+                    <div class="plan-card reveal">
+                        <div class="plan-header">
+                            <div class="plan-type">4 BHK</div>
+                            <div class="plan-label">Ultra-Luxury</div>
+                        </div>
+                        <div class="plan-body">
+                            <div class="size-display">2300-2600</div>
+                            <span class="unit">Sq. Ft.</span>
+                            <p>Grand and elegantly designed homes offering expansive spaces, premium finishes, and an elevated lifestyle.</p>
+                        <button class="btn btn-outline" style="color:var(--text-main); border-color:var(--text-main); margin-top: 25px;" onclick="openModal()">View Layout</button>
                     </div>
                 </div>
             </div>
@@ -890,229 +1348,223 @@
                 <p>Experience a lifestyle of convenience and luxury</p>
             </div>
             <div class="amenities-wrapper reveal">
-                <div class="amenity-box">
-                    <i class="fa-solid fa-person-swimming"></i>
-                    <h4>Swimming Pool</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-dumbbell"></i>
-                    <h4>Gymnasium</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-tree"></i>
-                    <h4>Landscaped Gardens</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-shield-cat"></i>
-                    <h4>3-Tier Security</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-elevator"></i>
-                    <h4>High-Speed Elevators</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-car"></i>
-                    <h4>Basement Parking</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
-                    <h4>Indoor Games</h4>
-                </div>
-                <div class="amenity-box">
-                    <i class="fa-solid fa-child-reaching"></i>
-                    <h4>Kids Play Area</h4>
-                </div>
+                <div class="amenity-box"><i class="fa-solid fa-person-swimming"></i><h4>Swimming Pool</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-dumbbell"></i><h4>Gymnasium</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-tree"></i><h4>Landscaped Gardens</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-shield-cat"></i><h4>3-Tier Security</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-elevator"></i><h4>High-Speed Elevators</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-car"></i><h4>3-level basement parking
+
+</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-table-tennis-paddle-ball"></i><h4>Indoor Games</h4></div>
+                <div class="amenity-box"><i class="fa-solid fa-child-reaching"></i><h4>Kids Play Area</h4></div>
             </div>
         </div>
     </section>
 
     <!-- Location -->
-<section class="section-padding location-section">
-    <div class="container">
-        <div class="section-header reveal">
-            <h2>Prime Location</h2>
-            <p>Well-Connected to Major Hubs</p>
-        </div>
-
-        <div class="loc-container reveal">
-
-            <div class="loc-info">
-                <h3 style="margin-bottom:25px;">Neighbourhood Highlights</h3>
-                <p style="margin-bottom:30px;">
-                    Located in Sector 1, Greater Noida West, offering excellent connectivity to FNG Expressway and NH-24.
-                </p>
-
-                <div class="dist-row">
-                    <span>NH-24</span>
-                    <span>10 km</span>
-                </div>
-                <div class="dist-row">
-                    <span>DLF Mall of India</span>
-                    <span>16 km</span>
-                </div>
-                <div class="dist-row">
-                    <span>Gaur City Mall</span>
-                    <span>6.8 km</span>
-                </div>
-                <div class="dist-row">
-                    <span>Jewar Airport</span>
-                    <span>60 km (1.5 hr)</span>
-                </div>
-                <div class="dist-row">
-                    <span>Yatharth Hospital</span>
-                    <span>1.2 km</span>
-                </div>
-
-                <a href="https://maps.google.com/?q=Sector+1+Greater+Noida+West"
-                   target="_blank"
-                   class="btn"
-                   style="margin-top:30px;width:100%;text-align:center;">
-                   Get Directions
-                </a>
+    <section class="section-padding location-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Prime Location</h2>
+                <p>Well-Connected to Major Hubs</p>
             </div>
-
-            <div class="loc-map" style="position:relative;">
-
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1053962868127!2d77.43813427549902!3d28.584266675691087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cefb2ac047e29%3A0xe6931480c4a3c5d!2sGreater%20Noida%20W%20Rd%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1773474056456!5m2!1sen!2sin"
-                    width="100%"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-
-                <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-                            color:#333;background:#fff;padding:10px 20px;border-radius:30px;
-                            font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.2);">
-                    <i class="fa-solid fa-location-dot"></i> Sobha Rivana Site
+            <div class="loc-container reveal">
+                <div class="loc-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1053962868127!2d77.43813427549902!3d28.584266675691087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cefb2ac047e29%3A0xe6931480c4a3c5d!2sGreater%20Noida%20W%20Rd%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1773474056456!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#333; background:#fff; padding:8px 16px; border-radius:20px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.2); pointer-events: none;">
+                        <i class="fa-solid fa-location-dot"></i> Sobha Rivana Site
+                    </div>
                 </div>
-
+                <div class="loc-info">
+                    <h3>Neighbourhood Highlights</h3>
+                    <p>
+                        Located in Sector 1, Greater Noida West, offering excellent connectivity to FNG Expressway and NH-24. The strategic location ensures that residents are never far from the action while enjoying the peace and tranquility of a premium residential enclave.
+                    </p>
+                    <div class="dist-row"><span>NH-24</span><span>10 km</span></div>
+                    <div class="dist-row"><span>DLF Mall of India</span><span>16 km</span></div>
+                    <div class="dist-row"><span>Gaur City Mall</span><span>6.8 km</span></div>
+                    <div class="dist-row"><span>Jewar Airport</span><span>60 km (1.5 hr)</span></div>
+                    <div class="dist-row"><span>Yatharth Hospital</span><span>1.2 km</span></div>
+                    <a href="https://maps.google.com/?q=Sector+1+Greater+Noida+West" target="_blank" class="btn" style="margin-top:30px; width:100%; text-align:center;">Get Directions</a>
+                </div>
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Testimonials -->
-<section class="section-padding testimonials">
+   <section class="section-padding testimonials">
     <div class="container">
 
         <div class="section-header reveal">
-            <h2 class="testimonials-title" style="color: white;">Awards & Recognition</h2>
-            <p class="testimonials-subtitle">
-                Celebrating excellence and global recognition in luxury real estate.
-            </p>
+            <h2 style="color: white;">Awards & Recognition</h2>
+            <p>Celebrating excellence and global recognition in luxury real estate.</p>
         </div>
 
-        <div class="testimonials-grid">
+        <div class="testimonials-grid" style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
 
-            <!-- Left : Video -->
-            <div class="video-testimonial reveal">
-
-                <video class="testimonial-video" controls>
+            <!-- Video Section -->
+            <div class="video-testimonial reveal" style="flex:1; min-width:320px;">
+                <video class="testimonial-video" controls 
+                poster="https://picsum.photos/id/1040/800/450"
+                style="width:100%; max-height:600px; object-fit:cover; border-radius:10px;">
                     <source src="testimonial-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-
             </div>
 
-            <!-- Right : Content -->
-            <div class="testimonial-content reveal" style="color: white;">
+            <!-- Content Section -->
+            <div class="testimonial-content reveal" style="flex:1; min-width:320px;">
+                <i class="fa-solid fa-award quote-icon" style="font-size:40px; color:var(--gold); margin-bottom:15px;"></i>
 
-                <i class="fa-solid fa-award quote-icon"></i>
-
-                <h3 class="testimonial-heading" >IIFA Award Recognition</h3>
+                <h3 style="color: white;">IIFA Award Recognition</h3>
 
                 <p class="testimonial-text">
-                    SOBHA Realty has been honored at the prestigious IIFA Awards for its
-                    outstanding contribution to the real estate industry. This global
-                    recognition reflects the brand’s commitment to superior quality,
-                    innovation, and delivering world-class residential developments.
+                    SOBHA Realty has been honored at the prestigious IIFA Awards for its outstanding contribution to the real estate industry. 
+                    This recognition highlights the brand’s commitment to superior quality, innovation, and world-class residential developments.
                 </p>
 
-                <div class="resident-info">
-                    <h4>IIFA Global Recognition</h4>
-                    <span>Excellence in Luxury Development</span>
-                </div>
+                <div class="resident-info" style="margin-top:20px;">
+                    <h4 style="color: #B79B6F;">IIFA Global Recognition</h4>
 
+                </div>
             </div>
 
         </div>
 
+    </div>
+</section>
+
+<!-- NEW VISIBLE CONTACT SECTION -->
+<section id="contact" class="section-padding contact-section">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Get In Touch</h2>
+            <p>We are here to help you find your dream home</p>
+        </div>
+
+        <div class="contact-wrapper reveal">
+
+            <!-- Left Side: Info -->
+            <div class="contact-info-box">
+                <h3>Contact Information</h3>
+                <p>Have questions about Sobha Rivana? Fill out the form and our team will get back to you shortly.</p>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text">
+                        <h5>Project Location</h5>
+                        <span>Sector 1, Greater Noida West, (Noida Extension), Uttar Pradesh, India.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="info-text">
+                        <h5>Phone</h5>
+                        <span>+91 741-741-2100</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h5>Email</h5>
+                        <span>info@sobhanoidaproject.in</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="contact-form-box">
+                <form onsubmit="handleForm(event)">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" required placeholder="">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Apartment Size</label>
+                            <select class="form-control">
+                                <option value="">Select Apartment Type</option>
+                                <option>2 BHK</option>
+                                <option>3 BHK</option>
+                                <option>4 BHK</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn" style="width:100%; border:none;">
+                                Submit
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
 </section>
 
     <!-- FAQ -->
-    <section class="section-padding" style="background: var(--white);">
+ <section id="faq" class="section-padding" style="background: var(--white);">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Frequently Asked Questions</h2>
             </div>
-            <div class="faq-container reveal" style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-container reveal" style="max-width: 900px; margin: 0 auto;">
                 <div class="faq-item">
                     <button class="faq-question">
-                    What types of apartments are available in Sobha Rivana?
-
+                        What types of apartments are available in Sobha Rivana?
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Sobha Rivana offers luxurious 2, 3, and 4 BHK apartments designed with modern layouts and premium specifications</p>
+                        <p>Sobha Rivana offers luxurious 2, 3, and 4 BHK apartments designed with modern layouts and premium specifications.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <button class="faq-question">
-                    What amenities are provided in Sobha Rivana Sector 1 Noida Extension?
-
+                        What amenities are provided in Sobha Rivana?
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
                         <p>The project features landscaped gardens, swimming pools, a fitness center, a clubhouse, and multiple sports facilities for residents.</p>
                     </div>
                 </div>
-
                 <div class="faq-item">
                     <button class="faq-question">
-                       What educational institutions are near Sobha Rivana Sector 1 Greater Noida West?
-
+                        What educational institutions are nearby?
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
                         <p>The location is close to reputed institutions such as Delhi Public School, Amity International School, Lotus Valley International School, and Galgotias University.</p>
                     </div>
                 </div>
-
-
                 <div class="faq-item">
                     <button class="faq-question">
-                      
-What are the key amenities at Sobha Rivana Sector 1 Greater Noida?
-
+                        How is the project connected to public transport?
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Residents can enjoy a clubhouse, swimming pool, gym, landscaped gardens, children’s play area, jogging tracks, indoor games, power backup, and 24/7 security.</p>
+                        <p>The project has excellent connectivity to Noida City Centre Metro Station, Sector 51 Metro Station, Greater Noida Bus Depot, and Ghaziabad Railway Station.</p>
                     </div>
                 </div>
-
-                  <div class="faq-item">
-                    <button class="faq-question">
-                      
-
-How is Sobha Rivana Sector 1 Apartments connected to public transport?
-
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>img-post-1
-The project has excellent connectivity to Noida City Centre Metro Station, Sector 51 Metro Station, Greater Noida Bus Depot, and Ghaziabad Railway Station</p>
-                    </div>
-                </div>
-
-
-
             </div>
         </div>
     </section>
@@ -1122,12 +1574,22 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h2 style="color: var(--white); font-size: 1.8rem; margin-bottom: 20px;">Sobha Rivana</h2>
+                    <h2 style="color: var(--white); font-size: 2rem; margin-bottom: 25px;">Sobha Rivana</h2>
                     <p>Let’s help you find the perfect dream Home. Experience the legacy of Sobha Limited.</p>
-                    <div style="margin-top: 20px;">
-                        <p><i class="fa-solid fa-phone gold-text"></i> +91 8010-100-200</p>
-                        <p><i class="fa-solid fa-envelope gold-text"></i> info@sobhanoidaproject.in</p>
-                    </div>
+                   <div style="margin-top: 25px;">
+    <p>
+        <i class="fa-solid fa-phone gold-text"></i> 
+        <a href="tel:+917417412100" style="color: white; text-decoration: none;">
+            +91 741-741-2100
+        </a>
+    </p>
+    <p>
+        <i class="fa-solid fa-envelope gold-text"></i> 
+        <a href="mailto:info@sobha-noidaproject.com" style="color: white; text-decoration: none;">
+            info@sobha-noidaproject.com
+        </a>
+    </p>
+</div>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -1138,18 +1600,19 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Address</h4>
-                    <p>Sector 1, Greater Noida West (Noida Extension), India.</p>
-                    <div style="margin-top: 20px;">
-                        <a href="#" style="margin-right: 15px; color: white; font-size: 1.2rem;"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" style="margin-right: 15px; color: white; font-size: 1.2rem;"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
+               <div class="footer-col">
+    <h4>Address</h4>
+    <p>
+        <a href=" https://maps.app.goo.gl/2BwXaCtF8d5ciLTJ9?g_st=iw" 
+           target="_blank" 
+           style="color: white; text-decoration: none;">
+           Sector 1, Greater Noida West (Noida Extension), India
+        </a>
+    </p>
+</div>
             </div>
             <div class="disclaimer">
-                <strong>Disclaimer:</strong> The content provided on this website is for information purposes only and does not constitute an offer to avail any service. The prices mentioned are subject to change without prior notice... (Full disclaimer text as provided). RERA No. UPRERAAGT24612.
+                <strong>Disclaimer:</strong> Disclaimer : The content provided on this website is for information purposes only and does not constitute an offer to avail any service. The prices mentioned are subject to change without prior notice, and the availability of properties mentioned is not guaranteed. The images displayed on the website are for representation purposes only and may not reflect the actual properties accurately. Please note that this is the official website of an authorized marketing partner. We may share data with Real Estate Regulatory Authority (RERA) registered brokers/companies for further processing as required. We may also send updates and information to the mobile number or email ID registered with us. All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Privacy Policy. Our Real Estate Rera No. UPRERAAGT24612. Sobha Aurum Project Rera No :  UPRERAPRJ361748/06/2025
             </div>
         </div>
     </footer>
@@ -1171,9 +1634,9 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
     <div class="modal" id="inquiryModal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="text-center" style="margin-bottom: 25px;">
+            <div style="text-align: center; margin-bottom: 30px;">
                 <h3 style="color: var(--primary-dark);">Schedule a Visit</h3>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Fill in your details and we will contact you shortly.</p>
+                <p style="font-size: 1rem; color: var(--text-light);">Fill in your details and we will contact you shortly.</p>
             </div>
             <form onsubmit="handleForm(event)">
                 <div class="form-group">
@@ -1186,7 +1649,7 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" required>
+                    <input type="email" class="form-control">
                 </div>
                 <button type="submit" class="btn" style="width: 100%; border: none;">Submit</button>
             </form>
@@ -1198,7 +1661,19 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
         // 1. Mobile Menu Toggle
         function toggleMenu() {
             const nav = document.getElementById('navMenu');
+            const toggleIcon = document.querySelector('.mobile-toggle i');
+            
             nav.classList.toggle('active');
+            
+            if (nav.classList.contains('active')) {
+                toggleIcon.classList.remove('fa-bars');
+                toggleIcon.classList.add('fa-xmark');
+                document.body.style.overflow = 'hidden';
+            } else {
+                toggleIcon.classList.remove('fa-xmark');
+                toggleIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
         }
 
         // 2. Sticky Header Effect
@@ -1211,19 +1686,18 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
             }
         });
 
-        // 3. Scroll Reveal Animation (Intersection Observer)
+        // 3. Scroll Reveal Animation
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    // Optional: Stop observing once revealed
-                    // observer.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.15, // Trigger when 15% visible
+            threshold: 0.15, 
             rootMargin: "0px 0px -50px 0px"
         });
 
@@ -1233,11 +1707,9 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             item.querySelector('.faq-question').addEventListener('click', () => {
-                // Close others
                 faqItems.forEach(other => {
                     if (other !== item) other.classList.remove('active');
                 });
-                // Toggle current
                 item.classList.toggle('active');
             });
         });
@@ -1249,6 +1721,8 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
         function openModal() {
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
+            const nav = document.getElementById('navMenu');
+            if(nav.classList.contains('active')) toggleMenu();
         }
 
         function closeModal() {
@@ -1256,12 +1730,10 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
             document.body.style.overflow = 'auto';
         }
 
-        // Close on outside click
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
 
-        // Scroll Trigger for Modal (After 30% scroll)
         window.addEventListener('scroll', () => {
             if (modalShown) return;
             const scrollTop = window.scrollY;
@@ -1291,7 +1763,7 @@ The project has excellent connectivity to Noida City Centre Metro Station, Secto
                 setTimeout(() => {
                     closeModal();
                     btn.innerText = originalText;
-                    btn.style.backgroundColor = ""; // Reset to CSS default
+                    btn.style.backgroundColor = ""; 
                     e.target.reset();
                 }, 1500);
             }, 1000);

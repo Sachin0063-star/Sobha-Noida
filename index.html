@@ -1511,6 +1511,133 @@ background:#a88635;
     color: #fff;
     text-decoration: none;
 } */
+
+/* Form Container */
+
+
+
+.contact-form-box{
+position:relative;
+background:#f6f4ef;
+padding:42px;
+border-radius:14px;
+border:1px solid #e5e2da;
+box-shadow:0 18px 45px rgba(0,0,0,0.08);
+max-width:600px;
+margin:auto;
+transition:all 0.35s ease;
+overflow:hidden;
+}
+
+/* Slim animated border */
+
+.contact-form-box::before{
+content:"";
+position:absolute;
+top:-2px;
+left:-2px;
+right:-2px;
+bottom:-2px;
+border-radius:16px;
+background:linear-gradient(120deg, transparent, #caa34d, transparent);
+background-size:300% 300%;
+animation:borderMove 6s linear infinite;
+z-index:-1;
+}
+
+@keyframes borderMove{
+0%{
+background-position:0% 50%;
+}
+100%{
+background-position:300% 50%;
+}
+}
+
+.contact-form-box:hover{
+transform:translateY(-4px);
+box-shadow:0 28px 70px rgba(0,0,0,0.12);
+}
+
+
+/* Grid Layout */
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+}
+
+.full-width{
+grid-column:1 / -1;
+}
+
+
+/* Labels */
+
+.form-group label{
+display:block;
+font-size:14px;
+font-weight:600;
+margin-bottom:6px;
+color:#333;
+}
+
+
+/* Inputs */
+
+.form-control{
+width:100%;
+padding:13px 15px;
+border-radius:8px;
+border:1px solid #dcd8cf;
+font-size:14px;
+transition:all 0.3s ease;
+background:#ffffff;
+}
+
+.form-control:hover{
+border-color:#caa34d;
+}
+
+.form-control:focus{
+outline:none;
+border-color:#caa34d;
+box-shadow:0 0 0 3px rgba(202,163,77,0.18);
+background:#fff;
+}
+
+
+/* Button */
+
+.submit-btn{
+width:100%;
+padding:14px;
+background:#caa34d;
+border:none;
+color:#fff;
+font-size:16px;
+font-weight:600;
+border-radius:8px;
+cursor:pointer;
+transition:all 0.3s ease;
+letter-spacing:0.5px;
+}
+
+.submit-btn:hover{
+background:#b8933f;
+transform:translateY(-3px);
+box-shadow:0 12px 28px rgba(0,0,0,0.18);
+}
+
+.submit-btn:active{
+transform:translateY(0);
+box-shadow:0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+
+
  </style>
 
                     
@@ -1966,45 +2093,49 @@ background:#a88635;
 
         <div class="contact-wrapper reveal">
 
- <!-- Left Side: Info -->
-              <div class="contact-form-box">
-                <form onsubmit="handleForm(event)">
-                    <div class="form-grid">
+                <!-- Left Side: Info -->
+                    <div class="contact-form-box">
 
-                        <div class="form-group">
-                            <label>Name *</label>
-                            <input type="text" class="form-control" required placeholder="">
-                        </div>
+                <form class="modern-form">
 
-                        <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" class="form-control" required placeholder="">
-                        </div>
+                <div class="form-grid">
 
-                        <div class="form-group full-width">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="">
-                        </div>
+                <div class="form-group">
+                <label>Name *</label>
+                <input type="text" class="form-control" required placeholder="Enter your name">
+                </div>
 
-                        <div class="form-group full-width">
-                            <label>Apartment Size</label>
-                            <select class="form-control">
-                                <option value="">Select Apartment Type</option>
-                                <option>2 BHK</option>
-                                <option>3 BHK</option>
-                                <option>4 BHK</option>
-                            </select>
-                        </div>
+                <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" class="form-control" required placeholder="Enter phone number">
+                </div>
 
-                        <div class="form-group full-width">
-                            <button type="submit" class="btn" style="width:100%; border:none;">
-                                Submit
-                            </button>
-                        </div>
+                <div class="form-group full-width">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="Enter email address">
+                </div>
 
-                    </div>
+                <div class="form-group full-width">
+                <label>Apartment Size</label>
+                <select class="form-control">
+                <option value="">Select Apartment Type</option>
+                <option>2 BHK</option>
+                <option>3 BHK</option>
+                <option>4 BHK</option>
+                </select>
+                </div>
+
+                <div class="form-group full-width">
+                <button type="submit" class="submit-btn">
+                Submit Enquiry
+                </button>
+                </div>
+
+                </div>
+
                 </form>
-            </div>
+
+                </div>
 
             <!-- Right Side: Info -->
             <div class="contact-info-box">
@@ -2177,6 +2308,9 @@ background:#a88635;
         </div>
     </div>
 
+
+
+
     <!-- JavaScript -->
     <script>
         // 1. Mobile Menu Toggle
@@ -2261,7 +2395,7 @@ background:#a88635;
             const docHeight = document.body.offsetHeight - window.innerHeight;
             const scrollPercent = scrollTop / docHeight;
 
-            if (scrollPercent > 0.3) {
+            if (scrollPercent > 0.01) {
                 openModal();
                 modalShown = true;
             }

@@ -247,20 +247,35 @@ scroll-behavior:smooth;
         header.scrolled .mobile-toggle { color: var(--primary-dark); }
 
         /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            min-height: 650px;
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.7)), url('https://img.freepik.com/premium-photo/young-family-stands-with-their-backs-camera-admiring-their-new-apartment_818261-41800.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-            padding-top: 80px;
-            position: relative;
+       .hero{
+        height:100vh;
+        min-height:650px;
+        background:linear-gradient(rgba(15,23,42,0.6), rgba(15,23,42,0.7)),
+        url('https://img.freepik.com/premium-photo/young-family-stands-with-their-backs-camera-admiring-their-new-apartment_818261-41800.jpg');
+        background-size:cover;
+        background-position:center;
+        background-attachment:fixed;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        color:var(--white);
+        padding-top:80px;
+        position:relative;
+        }
+
+
+        /* Mobile Fix */
+
+        @media (max-width:768px){
+
+        .hero{
+        min-height:520px;
+        background-attachment:scroll;
+        background-position:center top;
+        padding-top:100px;
+        }
+
         }
 
         .hero-content {

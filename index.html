@@ -778,7 +778,7 @@ scroll-behavior:smooth;
                 top: 0; right: -100%;
                 width: 85%;
                 height: 100vh;
-                background: rgba(255, 255, 255, 0.98);
+              background: lightsteelblue;
                 backdrop-filter: blur(10px);
                 flex-direction: column;
                 justify-content: center;
@@ -1218,7 +1218,7 @@ scroll-behavior:smooth;
 /* The Icon above the number */
 .fact-icon {
     font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.5); /* Faint white initially */
+    color: rgba(255, 255, 255, 0.5); 
     margin-bottom: 20px;
     transition: all 0.4s ease;
 }
@@ -1476,6 +1476,23 @@ scroll-behavior:smooth;
 }
 
 
+.call-btn{
+background:#caa34d;
+color:#fff;
+padding:8px 14px;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.call-btn:hover{
+background:#a88635;
+}
+
 
 
 /* contact button 
@@ -1504,33 +1521,42 @@ scroll-behavior:smooth;
 <body>
 
     <!-- Header -->
-        <header id="header">
-            <div class="container nav-wrapper">
-                <div class="logo">
-                    <i class="fa-solid gold-text"></i> SOBHA 
-                </div>
-                <nav>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#home" class="nav-link" onclick="toggleMenu()">Home</a></li>
-                        <li><a href="#about" class="nav-link" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#sobha-rivana" class="nav-link" onclick="toggleMenu()">Sobha Rivana</a></li>
-                        <li><a href="#amenities" class="nav-link" onclick="toggleMenu()">Amenities</a></li>
-                        <li><a href="#faq" class="nav-link" onclick="toggleMenu()">FAQ</a></li>
-                        <li>
-                            <a href="#contact" class="nav-link contact-btn" onclick="toggleMenu()">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="mobile-toggle" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-        </header>
+       <header id="header">
+    <div class="container nav-wrapper">
+
+        <div class="logo">
+            <i class="fa-solid gold-text"></i> SOBHA
+        </div>
+
+        <nav>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="toggleMenu()">About</a></li>
+                <li><a href="#sobha-rivana" class="nav-link" onclick="toggleMenu()">Sobha Rivana</a></li>
+                <li><a href="#amenities" class="nav-link" onclick="toggleMenu()">Amenities</a></li>
+                <li><a href="#faq" class="nav-link" onclick="toggleMenu()">FAQ</a></li>
+                <li>
+                    <a href="#contact" class="nav-link contact-btn" onclick="toggleMenu()">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Call Button -->
+        <a href="tel:+917417412100" class="call-btn">
+            <i class="fa-solid fa-phone"></i> +91 741-741-2100
+        </a>
+
+        <div class="mobile-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-subtitle">New Launch In Noida sector Sector 1</div>
+            <div class="hero-subtitle">New Launch In Greater Noida Sector-1</div>
             <h1>Spacious 2, 3 & 4 BHK Luxury Apartments</h1>
             <div class="hero-price">Starting at <span>₹ 2.09 Cr*</span></div>
             <div class="hero-btns">
@@ -1575,11 +1601,10 @@ scroll-behavior:smooth;
         <p>Premium Features Setting New Benchmarks</p>
     </div>
     <div class="card-grid">
-
-        <div class="highlight-card reveal">
-            <div class="icon-box"><i class="fa-regular fa-calendar-check"></i></div>
-            <h4>Possession</h4>
-            <p>4 Years (Tentatively 2030)</p>
+           <div class="highlight-card reveal">
+            <div class="icon-box"><i class="fa-solid fa-building-user"></i></div>
+            <h4>Total Units</h4>
+            <p>1375 Apartments</p>
         </div>
 
         <div class="highlight-card reveal">
@@ -1588,22 +1613,24 @@ scroll-behavior:smooth;
             <p>4 Units/Floor, 4 Lifts</p>
         </div>
 
+         <div class="highlight-card reveal">
+            <div class="icon-box"><i class="fa-solid fa-tag"></i></div>
+            <h4>Price</h4>
+            <p>₹15,000–₹16,000/sq. ft. (All Inclusive)</p>
+        </div>
+
+        <div class="highlight-card reveal">
+            <div class="icon-box"><i class="fa-regular fa-calendar-check"></i></div>
+            <h4>Possession</h4>
+            <p>4 Years (Tentatively 2030)</p>
+        </div>
+
+        
+
         <div class="highlight-card reveal">
             <div class="icon-box"><i class="fa-solid fa-file-circle-check"></i></div>
             <h4>RERA Status</h4>
-            <p>Applied in March</p>
-        </div>
-
-        <div class="highlight-card reveal">
-            <div class="icon-box"><i class="fa-solid fa-building-user"></i></div>
-            <h4>Total Units</h4>
-            <p>1375 Apartments</p>
-        </div>
-
-        <div class="highlight-card reveal">
-            <div class="icon-box"><i class="fa-solid fa-tag"></i></div>
-            <h4>Price</h4>
-            <p>₹15,500–₹16,500/sq. ft. (All Inclusive)</p>
+            <p>Tentatively in March-2026</p>
         </div>
 
         <div class="highlight-card reveal">
@@ -1636,10 +1663,10 @@ scroll-behavior:smooth;
                     </p>
                     
                     <div class="spec-list">
-                        <div class="spec-item"><strong>Status</strong><span>Coming Soon...</span></div>
-                        <div class="spec-item"><strong>Type</strong><span>Luxury Apartments</span></div>
                         <div class="spec-item"><strong>Size</strong><span>12 Acres</span></div>
+                        <div class="spec-item"><strong>Type</strong><span>Luxury Apartments</span></div>                              
                         <div class="spec-item"><strong>Configuration</strong><span>2, 3, & 4 BHK</span></div>
+                        <div class="spec-item"><strong>Status</strong><span>Coming Soon...</span></div>
                     </div>
                     <div style="margin-top: 35px;">
                         <button class="btn" onclick="openModal()">Download Brochure</button>
@@ -1716,14 +1743,14 @@ scroll-behavior:smooth;
             <div class="fact-item">
                 <div class="fact-icon"><i class="fa-solid fa-building"></i></div>
                 <div class="fact-number">548<span>+</span></div>
-                <div class="fact-label">Properties Delivered</div>
+                <div class="fact-label">Projects Delivered</div>
             </div>
 
             <!-- Fact 2 -->
             <div class="fact-item">
                 <div class="fact-icon"><i class="fa-solid fa-clipboard-check"></i></div>
                 <div class="fact-number">1456<span>+</span></div>
-                <div class="fact-label">Quality Checks Done</div>
+                <div class="fact-label">Quality check before delivery</div>
             </div>
 
             <!-- Fact 3 -->
@@ -1769,12 +1796,14 @@ scroll-behavior:smooth;
             <div class="loc-container reveal">
                 <div class="loc-map">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.1053962868127!2d77.43813427549902!3d28.584266675691087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cefb2ac047e29%3A0xe6931480c4a3c5d!2sGreater%20Noida%20W%20Rd%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1773474056456!5m2!1sen!2sin"
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.4188675902687!2d77.4310194!3d28.5755174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef10c7b09ae3%3A0x228bb0519fa88a97!2sSOBHA%2C%20Sec%201%20Noida%20Extension!5e1!3m2!1sen!2sin!4v1773636883579!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></>"
                         allowfullscreen="" loading="lazy">
                     </iframe>
-                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#333; background:#fff; padding:8px 16px; border-radius:20px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.2); pointer-events: none;">
+                   <a href="https://maps.app.goo.gl/2BwXaCtF8d5ciLTJ9?g_st=iw" target="_blank">
+                    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#333; background:#fff; padding:8px 16px; border-radius:20px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
                         <i class="fa-solid fa-location-dot"></i> Sobha Rivana Site
                     </div>
+                </a>
                 </div>
                 <div class="loc-info">
                     <h3>Neighbourhood Highlights</h3>
@@ -1937,48 +1966,18 @@ scroll-behavior:smooth;
 
         <div class="contact-wrapper reveal">
 
-            <!-- Left Side: Info -->
-            <div class="contact-info-box">
-                <h3>Contact Information</h3>
-                <p>Have questions about Sobha Rivana? Fill out the form and our team will get back to you shortly.</p>
-                
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                    <div class="info-text">
-                        <h5>Project Location</h5>
-                        <span>Sector 1, Greater Noida West, (Noida Extension), Uttar Pradesh, India.</span>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                    <div class="info-text">
-                        <h5>Phone</h5>
-                        <span>+91 741-741-2100</span>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                    <div class="info-text">
-                        <h5>Email</h5>
-                        <span>info@sobha-noidaproject.com</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side: Form -->
-            <div class="contact-form-box">
+ <!-- Left Side: Info -->
+              <div class="contact-form-box">
                 <form onsubmit="handleForm(event)">
                     <div class="form-grid">
 
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Name *</label>
                             <input type="text" class="form-control" required placeholder="">
                         </div>
 
                         <div class="form-group">
-                            <label>Phone Number</label>
+                            <label>Phone Number *</label>
                             <input type="tel" class="form-control" required placeholder="">
                         </div>
 
@@ -2006,6 +2005,39 @@ scroll-behavior:smooth;
                     </div>
                 </form>
             </div>
+
+            <!-- Right Side: Info -->
+            <div class="contact-info-box">
+                <h3>Contact Information</h3>
+                <p>Have questions about Sobha Rivana? Fill out the form and our team will get back to you shortly.</p>
+                
+                <!-- <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="info-text">
+                        <h5>Project Location</h5>
+                        <span>Sector 1, Greater Noida West, (Noida Extension), Uttar Pradesh, India.</span>
+                    </div>
+                </div> -->
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="info-text">
+                        <h5>Phone</h5>
+                        <span>+91 741-741-2100</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h5>Email</h5>
+                        <span>info@sobha-noidaproject.in</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+          
 
         </div>
     </div>
@@ -2074,8 +2106,8 @@ scroll-behavior:smooth;
     </p>
     <p>
         <i class="fa-solid fa-envelope gold-text"></i> 
-        <a href="mailto:info@sobha-noidaproject.com" style="color: white; text-decoration: none;">
-            info@sobha-noidaproject.com
+        <a href="mailto:info@sobha-noidaproject.in" style="color: white; text-decoration: none;">
+           info@sobha-noidaproject.in
         </a>
     </p>
 </div>
@@ -2114,7 +2146,7 @@ scroll-behavior:smooth;
         <a href="https://wa.me/917417412100" target="_blank" class="action-btn btn-wa" data-tooltip="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="mailto:info@sobha-noidaproject.com" class="action-btn btn-mail" data-tooltip="Email Us">
+        <a href="mailto:info@sobha-noidaproject.in" class="action-btn btn-mail" data-tooltip="Email Us">
             <i class="fa-solid fa-envelope"></i>
         </a>
     </div>
